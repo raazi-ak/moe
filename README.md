@@ -9,8 +9,8 @@
 ### Steps to Set Up
 1. Clone this repository:
    ```sh
-   git clone <repository-url>
-   cd <project-directory>
+   git clone https://github.com/nineti-GmbH/moe
+   cd moe
    ```
 
 2. Install dependencies:
