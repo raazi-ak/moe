@@ -73,6 +73,10 @@ Examples:
 ### Additional Rules
 - Test cases will be **automatically performed** before allowing a commit.
 - Even warnings will **stop the commit** process until they are resolved.
+- Add Strings with proper ID in the app_en and app_de files.
+   ```sh
+   flutter gen-l10n
+   ```
 
 ## Testing
 To run tests:
