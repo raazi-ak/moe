@@ -39,6 +39,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  amplify_flutter: ^2.6.0
+  amplify_auth_cognito: ^2.6.0
+  amplify_authenticator: ^2.3.2
+  get_it: ^8.0.3
 
 
 
