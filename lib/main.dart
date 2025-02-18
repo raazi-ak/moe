@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:moe/amplify/bloc/amplify_bloc.dart';
+import 'package:moe/homescreen.dart';
+import 'package:moe/services/connectivity/bloc/connectivity_bloc.dart';
 import 'package:moe/services/service_locator.dart';
 
 void main() {
@@ -19,6 +21,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => getIt<AmplifyBloc>()..add(InitializeAmplify())),
+        BlocProvider(create: (_) => getIt<ConnectivityBloc>()),
       ],
       child: MaterialApp(
         title: 'Amplify BLoC App',
@@ -33,22 +36,6 @@ class MyApp extends StatelessWidget {
           Locale('de'), // German
         ],
         home: const HomeScreen(),
-      ),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.helloWorld),
-      ),
-      body: Center(
-        child: Text(AppLocalizations.of(context)!.helloWorld),
       ),
     );
   }

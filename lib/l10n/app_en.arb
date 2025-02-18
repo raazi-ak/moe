@@ -1,7 +1,34 @@
 {
-    "@@locale": "en",
-    "helloWorld": "Hello World!",
-    "@helloWorld": {
-      "description": "The conventional newborn programmer greeting"
+  "@@locale": "en",
+  
+  "helloWorld": "Hello World!",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting."
+  },
+
+  "amplifyApp": "Amplify App",
+  "@amplifyApp": {
+    "description": "Label for the app title in the Amplify test screen."
+  },
+
+  "amplifyInitialized": "Amplify Initialized Successfully!",
+  "@amplifyInitialized": {
+    "description": "Message displayed when Amplify is successfully initialized."
+  },
+
+  "initializing": "Initializing...",
+  "@initializing": {
+    "description": "Message displayed while Amplify is initializing."
+  },
+
+  "errorMessage": "Error: {error}",
+  "@errorMessage": {
+    "description": "Error message displayed when an issue occurs.",
+    "placeholders": {
+      "error": {
+        "type": "String",
+        "description": "Detailed error message returned from the system."
+      }
     }
   }
+}

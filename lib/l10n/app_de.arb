@@ -1,3 +1,15 @@
 {   "@@locale": "de",
-    "helloWorld": "Hallo Welt!"
+    "helloWorld": "Hallo Welt!",
+    "amplifyApp": "Amplify-App",
+  "amplifyInitialized": "Amplify erfolgreich initialisiert!",
+  "initializing": "Initialisierung...",
+  "errorMessage": "Fehler: {error}",
+  "@errorMessage": {
+    "description": "Fehlermeldung mit Details.",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
 }
