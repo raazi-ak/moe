@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:moe/onboarding/screens/initial_page.dart';
+
 
 class HeaderDesign extends StatelessWidget {
   const HeaderDesign({super.key});
@@ -67,7 +69,10 @@ class HeaderDesign extends StatelessWidget {
             // },
             onTap: () {
               //Navigator.push(context, MaterialPageRoute(builder: (context) => App()));
-              Navigator.pushNamed(context, '/onboard_app');
+              // Navigator.pushNamed(context, '/onboard_app');
+
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => InitialPage()));
+
             },
             child: Icon(
               Icons.add_circle_outline,
