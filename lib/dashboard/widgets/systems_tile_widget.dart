@@ -4,7 +4,7 @@ import 'package:moe/services/themes.dart';
 
 class SystemsTileWidget extends StatelessWidget {
   final String deviceID;
-  const SystemsTileWidget({super.key , required this.deviceID});
+  const SystemsTileWidget({super.key, required this.deviceID});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,7 @@ class SystemsTileWidget extends StatelessWidget {
       },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 4.0),
-        padding: const EdgeInsets.only(
-            top: 20.0, left: 5, right: 5, bottom: 5),
+        padding: const EdgeInsets.only(top: 20.0, left: 5, right: 5, bottom: 5),
         decoration: BoxDecoration(
           color: theme.containerBlack,
           borderRadius: BorderRadius.circular(20),

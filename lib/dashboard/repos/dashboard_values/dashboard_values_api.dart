@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
 
-
 import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:moe/dashboard/repos/dashboard_values/system_model.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
@@ -17,7 +16,8 @@ class SystemWebSocketRepository {
   Stream<Map<String, dynamic>> get dataStream => _dataController.stream;
 
   Future<void> connectWebSocket() async {
-    final uri = Uri.parse('wss://ojil6u53db.execute-api.eu-central-1.amazonaws.com/production/?tableName=moe_${system.id}');
+    final uri =
+        Uri.parse('wss://ojil6u53db.execute-api.eu-central-1.amazonaws.com/production/?tableName=moe_${system.id}');
     channel = WebSocketChannel.connect(uri);
 
     final payload = {
@@ -39,7 +39,7 @@ class SystemWebSocketRepository {
 
   void _listenToStream() {
     channel.stream.listen(
-          (message) {
+      (message) {
         _messageBuffer += message;
         _processBuffer();
       },

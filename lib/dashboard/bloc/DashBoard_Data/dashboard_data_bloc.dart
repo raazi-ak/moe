@@ -9,7 +9,7 @@ part 'dashboard_data_state.dart';
 
 class DashboardDataBloc extends Bloc<DashboardDataEvent, DashboardDataState> {
   final SystemWebSocketRepository repository;
-  final Map<String, dynamic>  _latestComponents = {};
+  final Map<String, dynamic> _latestComponents = {};
 
   DashboardDataBloc(this.repository) : super(DashboardDataInitial()) {
     on<ConnectWebSocket>((event, emit) async {

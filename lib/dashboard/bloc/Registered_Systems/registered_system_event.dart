@@ -5,6 +5,6 @@ sealed class RegisteredSystemEvent {
   List<Object?> get props => [];
 }
 
-class FetchData extends RegisteredSystemEvent{}
+class FetchData extends RegisteredSystemEvent {}
 
-class RefreshData extends RegisteredSystemEvent{}
+class RefreshData extends RegisteredSystemEvent {}

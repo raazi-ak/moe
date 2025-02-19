@@ -1,11 +1,9 @@
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'navigation_state.dart';
 part 'navigation_event.dart';
-
 
 class NavigationBloc extends Bloc<NavigationEvent, NavigationState> {
   final GlobalKey<NavigatorState> navigatorKey;

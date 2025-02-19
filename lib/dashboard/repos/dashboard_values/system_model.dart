@@ -14,8 +14,7 @@ class Battery {
   factory Battery.fromJson(Map<String, dynamic> json) {
     return Battery(
       id: json['Component'], // Assuming Component ID is used as ID
-      stateOfCharge:
-      json['stateOfCharge']?.toString() ?? '0.0', // Convert to string
+      stateOfCharge: json['stateOfCharge']?.toString() ?? '0.0', // Convert to string
       busPower: json['busPower']?.toString() ?? '0.0', // Convert to string
     );
   }
@@ -77,9 +76,8 @@ class System {
   // Update or add a new battery entry
   void updateBattery(String batteryId, String newLevel, String newBusPower) {
     final battery = batteries.firstWhere(
-          (b) => b.id == batteryId,
-      orElse: () =>
-          Battery(id: batteryId, stateOfCharge: '0.0', busPower: '0.0'),
+      (b) => b.id == batteryId,
+      orElse: () => Battery(id: batteryId, stateOfCharge: '0.0', busPower: '0.0'),
     );
 
     if (!batteries.contains(battery)) {
@@ -91,12 +89,10 @@ class System {
   }
 
   // Update or add a new solar panel entry
-  void updateSolar(String solarId, String newVoltage, String newCurrent,
-      String newBusPower) {
+  void updateSolar(String solarId, String newVoltage, String newCurrent, String newBusPower) {
     final solar = solarPanels.firstWhere(
-          (s) => s.id == solarId,
-      orElse: () => Solar(
-          id: solarId, pvVoltage: '0.0', pvCurrent: '0.0', busPower: '0.0'),
+      (s) => s.id == solarId,
+      orElse: () => Solar(id: solarId, pvVoltage: '0.0', pvCurrent: '0.0', busPower: '0.0'),
     );
 
     if (!solarPanels.contains(solar)) {

@@ -89,7 +89,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     // final themeManager = ThemeManager.instance;
-    
+
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
       body: Center(
@@ -101,13 +101,29 @@ class _SignUpPageState extends State<SignUpPage> {
             children: [
               _buildHeader(),
               const SizedBox(height: 20),
-              _buildTextField(controller: nameController, hintText: "Name", errorText: isNameEmpty ? "Field cannot be empty" : null),
+              _buildTextField(
+                  controller: nameController,
+                  hintText: "Name",
+                  errorText: isNameEmpty ? "Field cannot be empty" : null),
               const SizedBox(height: 15),
-              _buildTextField(controller: emailController, hintText: "Email", errorText: isEmailInvalid ? "Enter a valid email address" : null),
+              _buildTextField(
+                  controller: emailController,
+                  hintText: "Email",
+                  errorText: isEmailInvalid ? "Enter a valid email address" : null),
               const SizedBox(height: 15),
-              _buildTextField(controller: passwordController, hintText: "Password", obscureText: true, errorText: isPasswordInvalid ? "Password must contain an uppercase letter, a number, and a special character." : null),
+              _buildTextField(
+                  controller: passwordController,
+                  hintText: "Password",
+                  obscureText: true,
+                  errorText: isPasswordInvalid
+                      ? "Password must contain an uppercase letter, a number, and a special character."
+                      : null),
               const SizedBox(height: 15),
-              _buildTextField(controller: confirmPasswordController, hintText: "Confirm Password", obscureText: true, errorText: isPasswordMismatch ? "Passwords do not match" : null),
+              _buildTextField(
+                  controller: confirmPasswordController,
+                  hintText: "Confirm Password",
+                  obscureText: true,
+                  errorText: isPasswordMismatch ? "Passwords do not match" : null),
               const SizedBox(height: 25),
               isLoading
                   ? _buildLoadingIndicator()

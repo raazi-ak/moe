@@ -29,8 +29,6 @@ class MyApp extends StatelessWidget {
           create: (context) => RegisteredSystemBloc(RegisteredSystemsAPIRepo()),
         ),
         BlocProvider(create: (_) => getIt<NavigationBloc>()),
-        
-        
       ],
       child: MaterialApp(
         title: 'Amplify BLoC App',

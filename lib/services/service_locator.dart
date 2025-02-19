@@ -15,5 +15,4 @@ void setupLocator() {
   getIt.registerLazySingleton<ConnectivityRepository>(() => ConnectivityRepository());
   getIt.registerFactory(() => ConnectivityBloc(connectivityRepository: getIt<ConnectivityRepository>()));
   getIt.registerLazySingleton<NavigationBloc>(() => NavigationBloc(navigatorKey));
-  
 }

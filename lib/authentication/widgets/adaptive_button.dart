@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moe/services/themes.dart';
 
-
 class AdaptiveButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;

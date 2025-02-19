@@ -5,7 +5,6 @@ sealed class NavBarState {
   final int index;
 
   const NavBarState({required this.index});
-
 }
 
 final class NavBarInitial extends NavBarState {
@@ -14,7 +13,7 @@ final class NavBarInitial extends NavBarState {
   List<Object> get props => [index];
 }
 
-final class NavBarUpdated extends NavBarState{
+final class NavBarUpdated extends NavBarState {
   const NavBarUpdated(int index) : super(index: index);
 
   List<Object> get props => [index];

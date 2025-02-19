@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:moe/services/themes.dart';
 
-
 Widget multiDevHeader() {
-
   // SVG Paths
   const String productionSvgPath = 'assets/images/dashboardpaneliamge.svg';
   const String consumptionSvgPath = 'assets/images/multicolorhouse.svg';
@@ -20,10 +18,8 @@ Widget multiDevHeader() {
   final theme = ThemeManager();
 
   final String batteryTextLarge = "0 %";
-  final String productionTextLarge =
-      "0  WATT";
-  final String consumptionTextLarge =
-      "0 WATT";
+  final String productionTextLarge = "0  WATT";
+  final String consumptionTextLarge = "0 WATT";
 
   return Container(
     padding: const EdgeInsets.all(15.0),
@@ -44,12 +40,9 @@ Widget multiDevHeader() {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            buildSvgColumn(
-                productionSvgPath, productionTextSmall, productionTextLarge),
-            buildSvgColumn(consumptionSvgPath, consumptionTextSmall,
-                consumptionTextLarge),
-            buildSvgColumn(
-                batterySvgPath, batteryTextSmall, batteryTextLarge),
+            buildSvgColumn(productionSvgPath, productionTextSmall, productionTextLarge),
+            buildSvgColumn(consumptionSvgPath, consumptionTextSmall, consumptionTextLarge),
+            buildSvgColumn(batterySvgPath, batteryTextSmall, batteryTextLarge),
           ],
         ),
       ],
@@ -79,14 +72,10 @@ Column buildSvgColumn(String svgPath, String textSmall, String textLarge) {
               text: '$textSmall\n', // Smaller text
             ),
             TextSpan(
-              text: largeTextParts.isNotEmpty
-                  ? largeTextParts[0]
-                  : '', // The large number
+              text: largeTextParts.isNotEmpty ? largeTextParts[0] : '', // The large number
             ),
             TextSpan(
-              text: largeTextParts.length > 1
-                  ? ' ${largeTextParts[1]}'
-                  : '', // The smaller unit,
+              text: largeTextParts.length > 1 ? ' ${largeTextParts[1]}' : '', // The smaller unit,
             ),
           ],
         ),

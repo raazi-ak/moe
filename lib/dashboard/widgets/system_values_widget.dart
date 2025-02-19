@@ -23,20 +23,18 @@ class _SystemValuesWidgetState extends State<SystemValuesWidget> {
 
   @override
   void initState() {
-    
     super.initState();
-    final repository = SystemWebSocketRepository(System(
-        id: widget.id,
-        batteries: [],
-        inverter: Inverter(id: "", busPower: ""),
-        solarPanels: []));
+    final repository = SystemWebSocketRepository(
+        System(id: widget.id, batteries: [], inverter: Inverter(id: "", busPower: ""), solarPanels: []));
     _bloc = DashboardDataBloc(repository)..add(ConnectWebSocket());
   }
+
   @override
   void dispose() {
     //_bloc.close();
     super.dispose();
   }
+
   Map<String, dynamic> _processData(Map<String, dynamic> rawData) {
     // Ensure "Data" exists and is a List
     if (!rawData.containsKey("Data") || rawData["Data"] is! List) {
@@ -124,7 +122,6 @@ class _SystemValuesWidgetState extends State<SystemValuesWidget> {
     return result;
   }
 
-
   @override
   Widget build(BuildContext context) {
     final theme = ThemeManager();
@@ -141,9 +138,8 @@ class _SystemValuesWidgetState extends State<SystemValuesWidget> {
             safePrint(formattedData);
             return Container(
               padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                  color: theme.containerBlack,
-                  borderRadius: const BorderRadius.all(Radius.circular(20))),
+              decoration:
+                  BoxDecoration(color: theme.containerBlack, borderRadius: const BorderRadius.all(Radius.circular(20))),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -489,7 +485,7 @@ class _SystemValuesWidgetState extends State<SystemValuesWidget> {
                               //       ),
                               Text(
                                 "${formattedData["Batteries"]["total_state_of_charge"]}",
-                                style: TextStyle(color: theme.white , fontSize: 20 , fontWeight: FontWeight.w700),
+                                style: TextStyle(color: theme.white, fontSize: 20, fontWeight: FontWeight.w700),
                               ),
                               const SizedBox(
                                 width: 5,
@@ -513,8 +509,7 @@ class _SystemValuesWidgetState extends State<SystemValuesWidget> {
           } else if (state is SystemDataError) {
             return Center(child: Text("Error: ${state.message}"));
           }
-          return Container(
-          );
+          return Container();
         },
       ),
     );

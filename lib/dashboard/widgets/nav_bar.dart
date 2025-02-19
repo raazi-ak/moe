@@ -16,7 +16,6 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
     Icons.account_circle_rounded,
   ];
 
-
   @override
   Widget build(BuildContext context) {
     // final ThemeProperties themeProperties = ThemeProperties(context: context);
@@ -30,8 +29,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             double iconSize = constraints.maxWidth * 0.08;
 
             return BottomAppBar(
-              height: MediaQuery.of(context).size.height *
-                  0.06, // Keep this height to avoid icon cropping
+              height: MediaQuery.of(context).size.height * 0.06, // Keep this height to avoid icon cropping
               //color: scColor,
               child: Container(
                 width: double.infinity,

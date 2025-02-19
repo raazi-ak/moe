@@ -15,7 +15,7 @@ class RouteGenerator {
       case AppRoutes.home:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case AppRoutes.dashboard:
-        return MaterialPageRoute(builder: (_) => const DashBoardMainScreen());     
+        return MaterialPageRoute(builder: (_) => const DashBoardMainScreen());
       // case AppRoutes.profile:
       //   return MaterialPageRoute(builder: (_) => const ProfileScreen());
       // case AppRoutes.settings:
@@ -29,4 +29,3 @@ class RouteGenerator {
     }
   }
 }
-

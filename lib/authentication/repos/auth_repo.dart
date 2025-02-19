@@ -30,7 +30,8 @@ class AuthRepository {
         AuthUserAttributeKey.email: email,
         AuthUserAttributeKey.name: name,
       };
-      await Amplify.Auth.signUp(username: email, password: password, options: SignUpOptions(userAttributes: userAttributes));
+      await Amplify.Auth.signUp(
+          username: email, password: password, options: SignUpOptions(userAttributes: userAttributes));
     } on AuthException catch (e) {
       throw Exception(e.message);
     }

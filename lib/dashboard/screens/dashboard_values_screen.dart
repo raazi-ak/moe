@@ -18,7 +18,6 @@ class DashboardValuesScreen extends StatefulWidget {
 class _DashboardValuesScreenState extends State<DashboardValuesScreen> {
   @override
   void initState() {
- 
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<RegisteredSystemBloc>().add(RefreshData());
@@ -49,21 +48,24 @@ class _DashboardValuesScreenState extends State<DashboardValuesScreen> {
                     SizedBox(
                       height: 20,
                     ),
-                    (state.data!.length > 1) ? multiDevHeader() : Container(height: 0,),
+                    (state.data!.length > 1)
+                        ? multiDevHeader()
+                        : Container(
+                            height: 0,
+                          ),
                     (state.data!.length == 1)
-                        ? SystemValuesWidget(id: state.data![0],)
-                        : 
-                         ListView.builder(
+                        ? SystemValuesWidget(
+                            id: state.data![0],
+                          )
+                        : ListView.builder(
                             shrinkWrap: true,
                             physics: NeverScrollableScrollPhysics(),
-                              itemCount: state.data?.length,
-                              itemBuilder: (context, index) {
-                                return SystemsTileWidget(
-                                    deviceID: state.data![index]);
-                                //return ListTile(title: Text(state.data![index].toString()));
-                              },
-                            ),
-                        
+                            itemCount: state.data?.length,
+                            itemBuilder: (context, index) {
+                              return SystemsTileWidget(deviceID: state.data![index]);
+                              //return ListTile(title: Text(state.data![index].toString()));
+                            },
+                          ),
                   ],
                 ),
               );

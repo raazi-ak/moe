@@ -2,9 +2,8 @@ import 'dart:convert';
 import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:http/http.dart' as http;
 
-class RegisteredSystemsAPIRepo{
-  final String apiUrl =
-      "https://240ko4d457.execute-api.eu-central-1.amazonaws.com/production/user_data";
+class RegisteredSystemsAPIRepo {
+  final String apiUrl = "https://240ko4d457.execute-api.eu-central-1.amazonaws.com/production/user_data";
   //SharedPreferences? prefs;
 
   Future<List<String>?> fetchUserSystems() async {

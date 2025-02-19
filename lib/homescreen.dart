@@ -45,7 +45,6 @@ class HomeScreen extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {
         context.read<NavigationBloc>().add(NavigateTo(route));
-        
       },
       child: Text(title),
     );
