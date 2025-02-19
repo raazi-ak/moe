@@ -3,8 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:moe/amplify/bloc/amplify_bloc.dart';
+import 'package:moe/dashboard/bloc/Registered_Systems/registered_system_bloc.dart';
+import 'package:moe/dashboard/repos/registered_systems/registered_systems_api.dart';
 import 'package:moe/homescreen.dart';
 import 'package:moe/services/connectivity/bloc/connectivity_bloc.dart';
+import 'package:moe/services/navigation/bloc/navigation_bloc.dart';
 import 'package:moe/services/service_locator.dart';
 
 void main() {
@@ -22,6 +25,12 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => getIt<AmplifyBloc>()..add(InitializeAmplify())),
         BlocProvider(create: (_) => getIt<ConnectivityBloc>()),
+        BlocProvider(
+          create: (context) => RegisteredSystemBloc(RegisteredSystemsAPIRepo()),
+        ),
+        BlocProvider(create: (_) => getIt<NavigationBloc>()),
+        
+        
       ],
       child: MaterialApp(
         title: 'Amplify BLoC App',
