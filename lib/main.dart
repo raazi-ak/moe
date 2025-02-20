@@ -7,7 +7,7 @@ import 'package:moe/dashboard/bloc/Registered_Systems/registered_system_bloc.dar
 import 'package:moe/dashboard/repos/registered_systems/registered_systems_api.dart';
 import 'package:moe/homescreen.dart';
 import 'package:moe/services/connectivity/bloc/connectivity_bloc.dart';
-import 'package:moe/services/navigation/bloc/navigation_bloc.dart';
+// import 'package:moe/services/navigation/bloc/navigation_bloc.dart';
 import 'package:moe/services/service_locator.dart';
 
 void main() {
@@ -23,12 +23,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => getIt<AmplifyBloc>()..add(InitializeAmplify())),
-        BlocProvider(create: (_) => getIt<ConnectivityBloc>()),
+        BlocProvider(create: (context) => getIt<AmplifyBloc>()..add(InitializeAmplify())),
+        BlocProvider(create: (context) => getIt<ConnectivityBloc>()),
         BlocProvider(
           create: (context) => RegisteredSystemBloc(RegisteredSystemsAPIRepo()),
         ),
-        BlocProvider(create: (_) => getIt<NavigationBloc>()),
+        // BlocProvider(create: (context) => getIt<NavigationBloc>()),
       ],
       child: MaterialApp(
         title: 'Amplify BLoC App',
