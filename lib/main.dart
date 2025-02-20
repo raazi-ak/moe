@@ -7,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
+import 'package:moe/add_pannels/blocs/add_pannels_bloc.dart';
 import 'package:moe/dashboard/bloc/Registered_Systems/registered_system_bloc.dart';
 import 'package:moe/dashboard/repos/registered_systems/registered_systems_api.dart';
 import 'package:moe/dashboard/screens/dashboard_main.dart';
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => RegisteredSystemBloc(Registered_Systems_API_Repo()),
         ),
+        BlocProvider(create: (context) => AddPannelsBloc()),
         BleConnectorProvider(),
         SettingsServiceProvider(),
         // BleConnectorProvider(),

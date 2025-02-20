@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:moe/add_pannels/screens/name_page.dart';
 import 'package:moe/dashboard/repos/dashboard_values/system_model.dart';
 import 'package:moe/theme.dart';
 
@@ -179,6 +180,7 @@ class _SystemValuesWidgetState extends State<SystemValuesWidget> {
                           //     get_pannels();
                           //   });
                           // });
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => name_page(sys_id: widget.id, pan_no: 0, bat_no: 0)));
                         },
                         child: Container(
                           width: 90,
